@@ -15,6 +15,9 @@ public class operation3 {
 		int sci= 0;
 		int total=0;
 	    float ave=0f;   
+	    
+	    char grade='F';
+	    
 
 		System.out.print("국어점수 입력: ");
 		kor= scann.nextInt();
@@ -24,13 +27,20 @@ public class operation3 {
 		math= scann.nextInt();
 		System.out.print("과학점수 입력: ");
 		sci= scann.nextInt();
+	
 	    			 
 	    total=kor+eng+math+sci;	
 	    ave=total/4f;
 	    ave=(int)((ave*100+5)/10)/10f;
 	    
-	    System.out.println("국어\t영어\t수학\t과학\t총합\t평균");
-		System.out.printf("%d\t%d\t%d\t%d\t%d\t%f",kor,eng,math,sci,total,ave);
+             if(ave<60) {grade='F';}
+             if(ave>=60) {grade='D';}
+	 		 if(ave>=70) {grade='C';}
+	 		 if(ave>=80) {grade='B';}
+	 		 if(ave>=90) {grade='A';}	    		   
+	    
+	    System.out.println("국어\t영어\t수학\t과학\t총합\t평균\t등급");
+		System.out.printf("%d\t%d\t%d\t%d\t%d\t%f\t%c",kor,eng,math,sci,total,ave,grade);
 			
 	}
 
